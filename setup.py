@@ -2,12 +2,12 @@ from setuptools import setup
 
 # https://setuptools.readthedocs.io/en/latest/
 setup(
-    name="typed-env",
+    name="envil",
     version="0.0.1",
     description="Get non-string values from environment variables.",
     long_description=open("README.md", "rt").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/luismsgomes/typed-env",
+    url="https://github.com/luismsgomes/envil",
     author="Luís Gomes",
     author_email="luismsgomes@gmail.com",
     license="GPLv3",
@@ -20,5 +20,5 @@ setup(
     keywords="util",
     install_requires=[],
     package_dir={"": "src"},
-    py_modules=["typed_env"],
+    py_modules=["envil"],
 )

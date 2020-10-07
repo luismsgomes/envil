@@ -5,7 +5,7 @@ This module implements the mundane task of getting typed values from
 
 Copyright ® 2020, Luís Gomes luismsgomes@gmail.com. All rights reserved.
 
-Links: https://github.com/luismsgomes/typed-env | https://pypi.org/project/typed-env/
+Links: https://github.com/luismsgomes/envil | https://pypi.org/project/envil/
 
 Usage
 -----
@@ -17,25 +17,24 @@ export BAR=y
 
 Then, you may access them in Python code as follows:
 
-   import typed_env as env
+   import envil as env
 
    foo = env.get_int("FOO", 0)
    bar = env.get_bool("BAR", False)
 
 The set of strings considered to be falsy values for boolean variables are
-specified in `typed_env.FALSY_VALUES`:
+specified in `envil.FALSY_VALUES`:
 
-   >>> print(repr(typed_env.FALSY_VALUES))
+   >>> print(repr(envil.FALSY_VALUES))
    {"0", "false", "f", "no", "n"}
 
 If needed you may override this list with your own, as in this example:
-
 
    bar = env.get_bool("BAR", falsy_strings={"nope", "zilch", "zero", "nada"})
 
 
 The second argument is the default value to be returned if the variable is not defined.
-If not specified, this argument will default to `typed_env.RAISE_EXCEPTION`, which will
+If not specified, this argument will default to `envil.RAISE_EXCEPTION`, which will
 cause an `EnvironmentVariableNotSet` exception to be raised if the variable is not defined.
 
 Note that, unlike in Python's `getenv()`, you may specify `None` as a valid default value.
