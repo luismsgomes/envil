@@ -12,8 +12,8 @@ Usage
 
 Assuming your environment has two variables set as follows (bash syntax):
 
-export FOO=123
-export BAR=y
+    export FOO=123
+    export BAR=y
 
 Then, you may access them in Python code as follows:
 
