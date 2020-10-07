@@ -1,7 +1,7 @@
 import os
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 RAISE_EXCEPTION = object()
