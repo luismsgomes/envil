@@ -17,20 +17,20 @@ export BAR=y
 
 Then, you may access them in Python code as follows:
 
-   import envil as env
+    import envil as env
 
-   foo = env.get_int("FOO", 0)
-   bar = env.get_bool("BAR", False)
+    foo = env.get_int("FOO", 0)
+    bar = env.get_bool("BAR", False)
 
 The set of strings considered to be falsy values for boolean variables are
 specified in `envil.FALSY_VALUES`:
 
-   >>> print(repr(envil.FALSY_VALUES))
-   {"0", "false", "f", "no", "n"}
+    >>> print(repr(envil.FALSY_VALUES))
+    {"0", "false", "f", "no", "n"}
 
 If needed you may override this list with your own, as in this example:
 
-   bar = env.get_bool("BAR", falsy_strings={"nope", "zilch", "zero", "nada"})
+    bar = env.get_bool("BAR", falsy_strings={"nope", "zilch", "zero", "nada"})
 
 
 The second argument is the default value to be returned if the variable is not defined.
