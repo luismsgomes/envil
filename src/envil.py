@@ -1,6 +1,9 @@
 import os
 
 
+__version__ = "0.0.1"
+
+
 RAISE_EXCEPTION = object()
 
 FALSY_STRINGS = {"0", "false", "f", "no", "n"}
