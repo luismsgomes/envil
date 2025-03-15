@@ -25,6 +25,14 @@ def get_int(varname, default=RAISE_EXCEPTION):
     return default
 
 
+def get_float(varname, default=RAISE_EXCEPTION):
+    if varname in os.environ:
+        return float(os.environ[varname])
+    if default is RAISE_EXCEPTION:
+        raise EnvironmentVariableNotSet(varname)
+    return default
+
+
 def get_bool(varname, default=RAISE_EXCEPTION, falsy_strings=None):
     if falsy_strings is None:
         falsy_strings = FALSY_STRINGS
@@ -41,4 +49,3 @@ def get_str(varname, default=RAISE_EXCEPTION):
     if default is RAISE_EXCEPTION:
         raise EnvironmentVariableNotSet(varname)
     return default
-
