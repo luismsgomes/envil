@@ -3,7 +3,7 @@
 This module implements the mundane task of getting typed values from
  environment variables.
 
-Copyright ® 2020, Luís Gomes luismsgomes@gmail.com. All rights reserved.
+Copyright ® 2020-2025, Luís Gomes luismsgomes@gmail.com. All rights reserved.
 
 Links: https://github.com/luismsgomes/envil | https://pypi.org/project/envil/
 
@@ -34,7 +34,7 @@ If needed you may override this list with your own, as in this example:
 
 
 The second argument is the default value to be returned if the variable is not defined.
-If not specified, this argument will default to `envil.RAISE_EXCEPTION`, which will
+If not specified, this argument will default to `envil.RAISE`, which will
 cause an `EnvironmentVariableNotSet` exception to be raised if the variable is not defined.
 
 Note that, unlike in Python's `getenv()`, you may specify `None` as a valid default value.
