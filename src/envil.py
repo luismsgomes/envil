@@ -2,7 +2,7 @@ from typing import Optional
 import os
 
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 
 FALSY_STRINGS = {"0", "false", "f", "no", "n"}
