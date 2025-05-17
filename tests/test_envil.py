@@ -10,7 +10,6 @@ from envil import (
 )
 
 
-
 class TestEnvironmentGetters(unittest.TestCase):
 
     @patch.dict(os.environ, {"TEST_INT": "42"})

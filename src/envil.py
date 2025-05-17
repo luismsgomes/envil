@@ -10,8 +10,10 @@ T = TypeVar("T")
 
 class _RaiseExceptionSentinel:
     """Sentinel indicating that an exception should be raised."""
-    def __repr__(self):
+
+    def __repr__(self) -> str:
         return "RAISE"
+
 
 RAISE = _RaiseExceptionSentinel()
 
@@ -23,11 +25,13 @@ class EnvironmentVariableNotSet(Exception):
     def __init__(self, varname: str):
         self.varname: str = varname
 
-    def __str__(self):
+    def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.varname!r})"
 
 
-def get_int(varname: str, default: Union[T, _RaiseExceptionSentinel]=RAISE) -> Union[T, int]:
+def get_int(
+    varname: str, default: Union[T, _RaiseExceptionSentinel] = RAISE
+) -> Union[T, int]:
     if varname in os.environ:
         return int(os.environ[varname])
     if default is RAISE:
@@ -35,7 +39,9 @@ def get_int(varname: str, default: Union[T, _RaiseExceptionSentinel]=RAISE) -> U
     return default
 
 
-def get_float(varname, default: Union[T, _RaiseExceptionSentinel]=RAISE) -> Union[T, float]:
+def get_float(
+    varname, default: Union[T, _RaiseExceptionSentinel] = RAISE
+) -> Union[T, float]:
     if varname in os.environ:
         return float(os.environ[varname])
     if default is RAISE:
@@ -43,7 +49,11 @@ def get_float(varname, default: Union[T, _RaiseExceptionSentinel]=RAISE) -> Unio
     return default
 
 
-def get_bool(varname, default: Union[T, _RaiseExceptionSentinel]=RAISE, falsy_strings: Optional[set[str]]=None) -> Union[T, bool]:
+def get_bool(
+    varname,
+    default: Union[T, _RaiseExceptionSentinel] = RAISE,
+    falsy_strings: Optional[set[str]] = None,
+) -> Union[T, bool]:
     if falsy_strings is None:
         falsy_strings = FALSY_STRINGS
     if varname in os.environ:
@@ -53,7 +63,9 @@ def get_bool(varname, default: Union[T, _RaiseExceptionSentinel]=RAISE, falsy_st
     return default
 
 
-def get_str(varname, default: Union[T, _RaiseExceptionSentinel]=RAISE) -> Union[T, str]:
+def get_str(
+    varname, default: Union[T, _RaiseExceptionSentinel] = RAISE
+) -> Union[T, str]:
     if varname in os.environ:
         return os.environ[varname]
     if default is RAISE:
@@ -61,4 +73,11 @@ def get_str(varname, default: Union[T, _RaiseExceptionSentinel]=RAISE) -> Union[
     return default
 
 
-__all__ = ["EnvironmentVariableNotSet", "get_int", "get_float", "get_bool", "get_str", "FALSY_STRINGS"]
+__all__ = [
+    "EnvironmentVariableNotSet",
+    "get_int",
+    "get_float",
+    "get_bool",
+    "get_str",
+    "FALSY_STRINGS",
+]
