@@ -2,7 +2,7 @@ from typing import Optional, TypeVar, Union
 import os
 
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 
 T = TypeVar("T")
